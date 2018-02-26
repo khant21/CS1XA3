@@ -1,5 +1,5 @@
-##Assignment 1
-###README for ProjectAnalyze.sh
+## Assignment 1
+### README for ProjectAnalyze.sh
 Upon execution, the user will be prompted to input a command. Each command is described below.
  Note: the commands are case sensitive.
 
