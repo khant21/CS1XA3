@@ -1,0 +1,121 @@
+diff --git a/Assign1/ProjectAnalyze.sh b/Assign1/ProjectAnalyze.sh
+index 0b5ad37..837b610 100755
+--- a/Assign1/ProjectAnalyze.sh
++++ b/Assign1/ProjectAnalyze.sh
+@@ -1,5 +1,15 @@
+ #!/bin/bash
+ 
++#output a list of possible commands
++echo "Commands List:"
++echo "status"
++echo "changes"
++echo "todo"
++echo "errors"
++echo "searchExt"
++echo "searchString"
++echo " "
++
+ #get the user input for the command
+ read -p "Input Command: " cmd
+ 
+@@ -13,7 +23,7 @@ elif [ "$cmd" = "changes" ]
+ then
+ 	git diff > changes.log
+ 	echo "Changes added to 'changes.log'"
+-
++	
+ 	#prompt to open changes.log
+         read -p "open changes.log? (Y/N) " open
+         if [ "$open" = "Y" ]
+@@ -28,15 +38,15 @@ then
+ 	
+ 	#prompt to open todo.log
+ 	read -p "open todo.log? (Y/N) " open
+-        if [ "$aopen" = "Y" ]
++        if [ "$open" = "Y" ]
+         then
+                 vim todo.log
+         fi
+ 
+-#find errors and move them to a error.log file
++#find errors in haskell files and move them to a error.log file
+ elif [ "$cmd" = "errors" ]
+ then
+-	find . -type f -name "*.hs" exec ghc -fno-code "{}" \; &> error.log
++	find ~ -iname "*.hs" -exec ghc -fno-code "{}" \; &> error.log
+ 	echo "errors have been moved to 'error.log'"
+ 	
+ 	#prompt to open error.log
+@@ -46,9 +56,15 @@ then
+ 		vim error.log
+ 	fi
+ 
+-#search feature
+-elif [ "$cmd" = "search" ]
++#search file extension feature
++elif [ "$cmd" = "searchExt" ]
++then
++	read -p "Enter the name of the extension (without the '.') : " file
++	find ~ -iname "*.$file"
++
++#find all files that contain a certain string
++elif [ "$cmd" = "searchString" ]
+ then
+-	read -p "Enter file to search for with the extension: " file
+-	find ~ -iname $file
++	read -p "Enter word or phrase to search for: " string
++	grep -rl "$string" ~
+ fi
+diff --git a/Assign1/README.md b/Assign1/README.md
+index 5182887..893964d 100644
+--- a/Assign1/README.md
++++ b/Assign1/README.md
+@@ -1,10 +1,13 @@
+ ## Assignment 1
+ ### README for ProjectAnalyze.sh
+ Upon execution, the user will be prompted to input a command. Each command is described below.
+- Note: the commands are case sensitive.
+ 
++Note: the commands are case sensitive.
++
++#### Base Features
+ 1. "status" - Informs you if you're local repo is up to date with the remote repository.
+ 2. "changes" - Puts all uncommited changes into a file called changes.log.
+ 3. "todo" - Puts each line from every file of your project with the tag #TODO into a file todo.log
+ 4. "errors" - Checks all haskell files for syntax errors and puts the results into error.log
+ 
++#### Additional Features
+diff --git a/Assign1/README.txt b/Assign1/README.txt
+deleted file mode 100644
+index 299a044..0000000
+--- a/Assign1/README.txt
++++ /dev/null
+@@ -1,2 +0,0 @@
+-temporary thing
+-
+diff --git a/Assign1/hask1.hs b/Assign1/hask1.hs
+index 8101487..fcaeba6 100644
+--- a/Assign1/hask1.hs
++++ b/Assign1/hask1.hs
+@@ -1,2 +1,2 @@
+-ans : String
++ans :: String
+ ans = 4
+diff --git a/Assign1/hask2.hs b/Assign1/hask2.hs
+deleted file mode 100644
+index dc2f270..0000000
+--- a/Assign1/hask2.hs
++++ /dev/null
+@@ -1,3 +0,0 @@
+-ans : String
+-ans = "This is the string" #TODO
+-num = 123 #TODO
+diff --git a/Assign1/py1.py b/Assign1/py1.py
+index 07aee43..a1e6f9e 100644
+--- a/Assign1/py1.py
++++ b/Assign1/py1.py
+@@ -1,3 +1,3 @@
+ x = "Hello" #tODO
+ d = 43 #TODO
+-"hey"
++B = 5

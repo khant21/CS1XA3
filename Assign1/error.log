@@ -1,0 +1,35 @@
+[1 of 1] Compiling Main             ( /u50/khant21/CS1XA3/Labs/Bash1/Bash1.hs, nothing )
+
+/u50/khant21/CS1XA3/Labs/Bash1/Bash1.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/CS1XA3/Labs/Bash02/Bash02.hs, nothing )
+
+/u50/khant21/CS1XA3/Labs/Bash02/Bash02.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/CS1XA3/Labs/Bash01/Bash01.hs, nothing )
+
+/u50/khant21/CS1XA3/Labs/Bash01/Bash01.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/CS1XA3/Labs/Bash2/Bash2.hs, nothing )
+
+/u50/khant21/CS1XA3/Labs/Bash2/Bash2.hs:5:21:
+    parse error on input ‘]’
+[1 of 1] Compiling Main             ( /u50/khant21/CS1XA3/Assign1/hask1.hs, nothing )
+
+/u50/khant21/CS1XA3/Assign1/hask1.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/bFiles/Bash01.hs, nothing )
+
+/u50/khant21/bFiles/Bash01.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/bFiles/Bash2.hs, nothing )
+
+/u50/khant21/bFiles/Bash2.hs:5:21: parse error on input ‘]’
+[1 of 1] Compiling Main             ( /u50/khant21/bFiles/Bash1.hs, nothing )
+
+/u50/khant21/bFiles/Bash1.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’
+[1 of 1] Compiling Main             ( /u50/khant21/bFiles/Bash02.hs, nothing )
+
+/u50/khant21/bFiles/Bash02.hs:1:1:
+    The IO action ‘main’ is not defined in module ‘Main’

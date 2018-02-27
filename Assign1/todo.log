@@ -1,0 +1,7 @@
+/u50/khant21/CS1XA3/Assign1/changes.log: 3. "todo" - Puts each line from every file of your project with the tag #TODO into a file todo.log
+/u50/khant21/CS1XA3/Assign1/changes.log:-ans = "This is the string" #TODO
+/u50/khant21/CS1XA3/Assign1/changes.log:-num = 123 #TODO
+/u50/khant21/CS1XA3/Assign1/changes.log: d = 43 #TODO
+/u50/khant21/CS1XA3/Assign1/ProjectAnalyze.sh:	grep -r "#TODO" --exclude=\todo.log  ~/CS1XA3/Assign1/ &> todo.log
+/u50/khant21/CS1XA3/Assign1/py1.py:d = 43 #TODO
+/u50/khant21/CS1XA3/Assign1/README.md:3. "todo" - Puts each line from every file of your project with the tag #TODO into a file todo.log

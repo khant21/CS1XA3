@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#output a list of possible commands
+echo "Commands List:"
+echo "status"
+echo "changes"
+echo "todo"
+echo "errors"
+echo "searchExt"
+echo "searchString"
+echo " "
+
 #get the user input for the command
 read -p "Input Command: " cmd
 
@@ -13,7 +23,7 @@ elif [ "$cmd" = "changes" ]
 then
 	git diff > changes.log
 	echo "Changes added to 'changes.log'"
-
+	
 	#prompt to open changes.log
         read -p "open changes.log? (Y/N) " open
         if [ "$open" = "Y" ]
@@ -28,15 +38,15 @@ then
 	
 	#prompt to open todo.log
 	read -p "open todo.log? (Y/N) " open
-        if [ "$aopen" = "Y" ]
+        if [ "$open" = "Y" ]
         then
                 vim todo.log
         fi
 
-#find errors and move them to a error.log file
+#find errors in haskell files and move them to a error.log file
 elif [ "$cmd" = "errors" ]
 then
-	find . -type f -name "*.hs" exec ghc -fno-code "{}" \; &> error.log
+	find ~ -iname "*.hs" -exec ghc -fno-code "{}" \; &> error.log
 	echo "errors have been moved to 'error.log'"
 	
 	#prompt to open error.log
@@ -46,9 +56,15 @@ then
 		vim error.log
 	fi
 
-#search feature
-elif [ "$cmd" = "search" ]
+#search file extension feature
+elif [ "$cmd" = "searchExt" ]
 then
-	read -p "Enter file to search for with the extension: " file
-	find ~ -iname $file
+	read -p "Enter the name of the extension (without the '.') : " file
+	find ~ -iname "*.$file"
+
+#find all files that contain a certain string
+elif [ "$cmd" = "searchString" ]
+then
+	read -p "Enter word or phrase to search for: " string
+	grep -rl "$string" ~
 fi

@@ -1,2 +1,2 @@
-ans : String
+ans :: String
 ans = 4
