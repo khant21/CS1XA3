@@ -18,3 +18,4 @@ The following features were implemented in the code from another GitHub. (https:
 4. Increase the speed of the paddles and the ball with increased difficulty.
 5. Game over when a player gets to 5 points, increases competitiveness.
 6. Added a game over screen that restarts the game loop.
+   - https://github.com/elwazana/CS1XA3/tree/master/Assign2
